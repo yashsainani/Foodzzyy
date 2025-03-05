@@ -1,0 +1,121 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 32%;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 1rem 2px var(--text-color);
+  background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 1080px) {
+  .card-container {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card-container {
+    flex-direction: column;
+    align-items: baseline;
+    width: 100%;
+    max-height: fit-content;
+  }
+}
+
+.img {
+  width: 50%;
+  min-height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid var(--text-color);
+}
+
+.img > img {
+  border-radius: 5px;
+  width: 100%;
+  min-height: 100%;
+  transition: all 0.5s;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-container:hover > .img >  img {
+  transform: scale(1.1);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .img, .info {
+    width: 100%;
+  }
+}
+
+.info > h1 {
+  font-size: 2.4rem;
+  font-weight: bolder;
+  color: var(--primary-color);
+}
+
+.info > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.info > span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.amount {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.amount > button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid var(--text-color);
+}
+
+.amount > span {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.addToCart {
+  width: 100%;
+  max-width: 10rem;
+  padding: 5px 1rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+  background-color: var(--secondary-color);
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+}

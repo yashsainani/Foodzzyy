@@ -1,0 +1,24 @@
+.review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 50%;
+    padding: 1rem 3rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+    .review-card {
+        width: 100%;
+    }
+}
+
+.review-card > h3 {
+    color: var(--text-color);
+    align-self: flex-end;
+}

@@ -1,0 +1,95 @@
+.cartCard {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 120rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+}
+
+
+.cartCard > img {
+    width: 100%;
+    max-width: 30rem;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: calc(100% - 30rem);
+    border-left: 2px solid var(--primary-color);
+    height: 100%;
+    padding: 2rem;
+}
+
+.products > h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.products > p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.amount {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.amount > p:nth-child(4) {
+    font-weight: bold;
+}
+
+.products > span {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.delBtn {
+    padding: 1rem;
+    width: 100%;
+    max-width: 10rem;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid rgba(208, 23, 23, 0.877);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: rgba(208, 23, 23, 0.877);
+    font-weight: bolder;
+    transition: all 0.5s;
+}
+
+.delBtn:hover {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background-color: rgba(208, 23, 23, 0.877);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 700px) {
+    .cartCard {
+        flex-direction: column;
+    }
+
+    .cartCard > img {
+        max-width: 100%;
+    }
+
+    .products {
+        border-left: 0;
+        border-top: 2px solid var(--primary-color);
+        width: 100%;
+    }
+}

@@ -1,0 +1,60 @@
+.login {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border: 2px solid var(--secondary-color);
+    background: radial-gradient(circle, var(--text-color) 10%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.login > h1 {
+    font-size: 4rem;
+    color: var(--secondary-color);
+}
+
+.sign-way {
+    display: flex;
+    width: 100%;
+    max-width: 30rem;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.sign-way > p {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 1rem;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.login > p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--secondary-color);  
+}
+
+.login > p > a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login > button {
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.login > button:hover {
+    box-shadow: 0 0 10px 2px var(--secondary-color);
+}

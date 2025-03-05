@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    max-width: 192rem;
+    object-fit: cover;
+    object-position: top;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    max-height: 55rem;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+}
+
+.img > img {
+    object-fit: cover;
+    object-position: top;
+}
