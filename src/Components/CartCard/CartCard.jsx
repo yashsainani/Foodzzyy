@@ -1,7 +1,7 @@
 import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
-import styles from "./cartCard.module.css";
+import styles from "./CartCard.module.css";
 import { firestore } from "../../Configuration/Firestore";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../Slices/Products";
