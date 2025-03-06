@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addLocation } from "../../Slices/User";
 import { addDoc, collection } from "firebase/firestore";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
 import styles from "./RestroCard.module.css";
 import { firestore } from "../../Configuration/Firestore";
@@ -50,7 +51,18 @@ const RestroCard = ({
     const user = JSON.parse(localStorage.getItem("userDetails"));
 
     if (!user) {
-      alert("Login to add product on cart");
+      const alert = () =>
+        toast("Login To Add In Cart", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          newestOnTop: true,
+          closeOnClick: true,
+          theme: "light",
+          transition: Bounce,
+          pauseOnHover: false
+        });
+      alert();
       dispatch(addLocation(currLocation.pathname));
       navigate("/login");
     }
@@ -69,7 +81,18 @@ const RestroCard = ({
       };
       try {
         await addDoc(cartItemsRef, data);
-        alert('Item Added to cart');
+        const alert = () =>
+          toast.success("Item Added To Cart Successfully", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            newestOnTop: true,
+            closeOnClick: true,
+            theme: "light",
+            transition: Bounce,
+            pauseOnHover: false
+          });
+        alert();
       }
       catch (err) {
         console.log('ERROR WHILE ADDING ITEM IN CART');
@@ -122,6 +145,16 @@ const RestroCard = ({
         ) : (
           ""
         )}
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick={true}
+          theme="light"
+          transition={Bounce}
+          pauseOnHover={false}
+        />
       </div>
     </div>
   );
