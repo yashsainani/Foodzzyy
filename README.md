@@ -33,7 +33,7 @@ This is a food-related website built using **React**, **Redux** for state manage
 - **React-Icons**: For adding icons to UI elements.
 - **Modular CSS**: CSS Modules for scoped and maintainable styles.
 
-/Foodzzyy
+```/Foodzzyy
 │
 ├── /public                   # Public assets and index.html
 │
@@ -46,4 +46,4 @@ This is a food-related website built using **React**, **Redux** for state manage
 │   ├── /Store.js             # Redux Store Configuration
 │   └── App.js                # Main app component
 │
-└── index.html                # html file
+└── index.html                # html file```
