@@ -10,11 +10,16 @@ html {
 }
 
 :root {
-    --primary-color: #373d20;
-    --secondary-color: #abac7f;
-    --text-color: #717744;
-    --extra-usable1: #fefefe;
-    --extra-usable2: #080808;
+    /* --primary-color: #a70a0a;
+    --secondary-color: #FFE8C5;
+    --text-color: #FFA27F;
+    --extra-usable1: #c9e699;
+    --extra-usable2: #F2F6D0; */
+    --primary-color: #690B22;
+    --secondary-color: #F1E3D3;
+    --text-color: #E07A5F;
+    --extra-usable1: #FDF7F4;
+    --extra-usable2: #F2F6D0;
 }
 
 body {
