@@ -46,4 +46,4 @@ This is a food-related website built using **React**, **Redux** for state manage
 │   ├── /Store.js             # Redux Store Configuration
 │   └── App.js                # Main app component
 │
-└── index.html                # html file```
+└── index.html                # html file
