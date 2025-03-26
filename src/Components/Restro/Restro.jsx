@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./Restro.module.css";
-import RestroCard from "../RestroCard/RestroCard";
+import Loader from "../../Containers/Loader/Loader";
+const RestroCard = React.lazy(() => import("../RestroCard/RestroCard"));
 
 const Restro = () => {
   const restroArr = useSelector((state) => state.products.restaurants);
@@ -66,7 +67,9 @@ const Restro = () => {
       <hr />
       <section className={styles["restro-section"]}>
         {restros.map((ele) => (
-          <RestroCard key={ele.id} {...ele} className={styles.restroCard} />
+          <Suspense fallback={<Loader />}>
+            <RestroCard key={ele.id} {...ele} className={styles.restroCard} />
+          </Suspense>
         ))}
       </section>
     </section>

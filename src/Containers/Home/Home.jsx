@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { useDispatch } from 'react-redux';
 
 import styles from './Home.module.css';
 import { addRestaurants } from '../../Slices/Products';
 import CarouselComp from '../../Components/Carousel/Carousel';
-import Restro from '../../Components/Restro/Restro';
+import Loader from '../Loader/Loader';
+const Restro = React.lazy(() => import("../../Components/Restro/Restro"));
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -26,7 +27,9 @@ const Home = () => {
     return (
         <section className={styles.container}>
             <CarouselComp />
-            <Restro />
+            <Suspense fallback={<Loader />}>
+                <Restro />
+            </Suspense>
         </section>
     );
 };

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import styles from "./DynamicRestros.module.css";
-import RestroCard from "../RestroCard/RestroCard";
+import Loader from "../../Containers/Loader/Loader";
+const RestroCard = React.lazy(() => import("../RestroCard/RestroCard"));
 
 const DynamicRestros = () => {
   const { id } = useParams();
@@ -22,7 +23,9 @@ const DynamicRestros = () => {
   return (
     <section className={styles.restro}>
       {restros.map((ele) => (
-        <RestroCard key={ele.id} {...ele} />
+        <Suspense fallback={<Loader />}>
+          <RestroCard key={ele.id} {...ele} />
+        </Suspense>
       ))}
     </section>
   );

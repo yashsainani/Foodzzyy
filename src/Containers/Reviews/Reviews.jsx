@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../Configuration/Firestore";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,7 +8,8 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 import styles from "./Reviews.module.css";
 import { addReviews } from "../../Slices/Products";
 import { addLocation } from "../../Slices/User";
-import ReviewCard from "../../Components/ReviewCard/ReviewCard";
+import Loader from "../Loader/Loader";
+const ReviewCard = React.lazy(() => import("../../Components/ReviewCard/ReviewCard"));
 
 const Reviews = () => {
   const dispatch = useDispatch();
@@ -105,7 +106,9 @@ const Reviews = () => {
       </form>
       <div className={styles.reviews}>
         {reviews.map((ele) => (
-          <ReviewCard key={ele.id} {...ele} />
+          <Suspense fallback={<Loader />}>
+            <ReviewCard key={ele.id} {...ele} />
+          </Suspense>
         ))}
       </div>
     </section>
