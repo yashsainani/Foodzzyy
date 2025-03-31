@@ -1,45 +1,49 @@
-.loading{
-    height: 100vh;
+:root {
+    --base: #263238;
+    --lite:  #FFF;
+    --brand: #FF3D00;
+    --size: 48px;
+}
+
+.load-section {
     width: 100%;
-    z-index: 5;
-    position: absolute;
-    left: 0;
-    top: 0;
+    height: 100%;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #53AEE1;
 }
 
-.loading h3 {
-    color: rgb(255, 255, 255);
-    font-size: 3vw;
+.loader {
+    width : var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: inline-block;
     position: relative;
-    padding: 1vw 3vw;
-}
+    border: 3px solid;
+    border-color: var(--lite) var(--lite) transparent transparent;
+    animation: rotation 1s linear infinite;
 
-.loading h3 span{
-    color: #53AEE1;
-    animation: lightmove 8s linear infinite;
-    animation-delay: calc(0.2s * var(--i));
-}
-
-@keyframes lightmove {
-    0%{
-        opacity: 0;
-        color: #53AEE1;
+    &::after , &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      border: 3px solid;
+      border-color: transparent transparent var(--brand) var(--brand);
+      width:  var(--size) - 8px;
+      height:  var(--size) - 8px;
+      border-radius: 50%;
+      animation: rotationBack 0.5s linear infinite;
+      transform-origin: center center;
     }
-    20%{
-        opacity: 1;
-        color: rgba(255, 255, 255, 0.8);
+    &::before{
+      width:  var(--size) - 16px;
+      height:  var(--size) - 16px;
+      border-color:var(--lite) var(--lite) transparent transparent;
+        animation: rotation 1.5s linear infinite;
     }
-    
-    50%{
-        opacity: 0;
-        color: #53AEE1;
-    }
-    100%{
-        opacity: 0;
-        color: rgba(255, 255, 255, 0.8);
-    }
-}
+  }

@@ -1,10 +1,12 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addEmail, addPhotoUrl, addUser } from '../../Slices/User';
 
+import { addEmail, addPhotoUrl, addUser } from '../../Slices/User';
 import styles from './Layout.module.css';
 import Header from '../../Components/Header/Header';
 import Footer from '../Footer/Footer';
+import Loader from '../Loader/Loader';
 
 const Layout = () => {
 
@@ -21,7 +23,9 @@ const Layout = () => {
     return (
         <section className={styles.container}>
             <Header />
-            <Outlet />
+            <Suspense fallback={<Loader />}>
+                <Outlet />
+            </Suspense>
             <Footer />
         </section>
     );
